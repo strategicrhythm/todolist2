@@ -1,0 +1,33 @@
+<%= form_for(@todolist, html:{class: 'form-horizontal'}) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  
+  <div class="field">
+      <%= link_to "マイページへ戻る", @user %>
+     <table class="table table-striped table-bordered table-hover">
+          <tbody>
+             <tr>
+               <th colspan="3">リストタイトル</th>
+            </tr>
+            <td colspan="3"><%= f.text_field :title, class: 'form-control' %></td>
+            <tr>
+               <th>やること</th>
+               <th>期日</th>
+               <th>Action</th>
+            </tr>
+            <tr>
+                <td><%= f.text_field :things, class: 'form-control' %></td>
+                <td><%= f.text_field :note, class: 'form-control' %></td>
+                <td></td>             
+            </tr>
+            <%= f.nested_fields_for :listtables, wrapper_tag: :tr do |q| %>
+                <td><%= q.text_field :things, class: 'form-control' %></td>
+                <td><%= q.text_field :note, class: 'form-control' %></td>
+                <td><%= q.remove_nested_fields_link 'Delete', class: 'btn btn-danger', role: 'button' %></td>
+            <% end %>
+
+          </tbody>
+       </table>
+      <%= f.add_nested_fields_link :listtables, 'Add new table', class: 'btn btn-primary', role: 'button' %>
+  </div>
+  <%= f.submit "Update", class: "btn btn-primary" %>
+<% end %>
