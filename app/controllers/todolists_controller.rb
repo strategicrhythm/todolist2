@@ -1,5 +1,5 @@
 class TodolistsController < ApplicationController
-before_action :logged_in_user, only: [:create, :edit, :update]
+before_action :logged_in_user, only: [:create, :edit, :update, :show]
 
   def create
     @todolist = current_user.todolists.build(todolist_params)
