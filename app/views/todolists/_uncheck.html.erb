@@ -1,0 +1,5 @@
+<%= link_to "完了前" , todolist_path,
+                      :class => "have-#{@todolist.id} btn-have btn btn-warning btn-sm have",
+                      :remote => true,
+                      :method => :post %>
+             

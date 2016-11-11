@@ -1,3 +1,4 @@
+<%= form_for(@todolist, html:{class: 'form-horizontal'}) do |f| %>
 <div class="row">
   <aside class="col-md-6">
     <section class="user_info">
@@ -17,15 +18,20 @@
           　<tr>
                <th>やること</th>
                <th>メモ</th>
+               <th>状況</th>
             </tr>
             <tr>
               <td><%= @todolist.things %></td>
               <td><%= @todolist.note %></td>
+              <td></td>
             </tr>
+
             <% @todolist.listtables.each do |listtable| %>
             <tr>
+                
                <td><%= listtable.things %></td>
                <td><%= listtable.note %></td>
+               <td><%= render 'todolists/action', object: listtable %></td>
             </tr>
             <% end %>
            </tbody>
@@ -39,3 +45,4 @@
         <% end %>
    </div>
 </div>
+<% end %>

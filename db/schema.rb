@@ -11,15 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161108101001) do
+ActiveRecord::Schema.define(version: 20161111091222) do
 
   create_table "listtables", force: :cascade do |t|
     t.integer  "todolist_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.string   "things"
     t.string   "note"
     t.string   "title"
+    t.integer  "situation",   default: 0
   end
 
   add_index "listtables", ["todolist_id", "created_at"], name: "index_listtables_on_todolist_id_and_created_at"

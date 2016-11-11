@@ -65,7 +65,7 @@ class UsersController < ApplicationController
   def todolist_params
         params.require(:todolist).permit(
           :title, :things, :note,
-          listtables_attributes: [:id, :todolist_id, :title, :things, :note, :_destroy]
+          listtables_attributes: [:id, :todolist_id, :title, :things, :note, :situation, :_destroy]
         )
   end
   
