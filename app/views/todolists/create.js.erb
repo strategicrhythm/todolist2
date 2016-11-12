@@ -1,0 +1,7 @@
+<% if object.situation == "uncheck" %>
+  $action.html("<%= escape_javascript(render('todolists/check')) %>");
+<% elsif object.situation == "check" %>
+  $(".have-<%= @todolist.id %>,'have-<%= @todolist.id %>'.replaceWith("<%= escape_javascript(render('todolists/uncheck' , todolist_params: @todolist )) %>");
+<% end %>
+
+$('.btn-have,.btn-want').removeAttr('disabled');

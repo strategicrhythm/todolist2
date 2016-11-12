@@ -13,9 +13,11 @@ before_action :logged_in_user, only: [:create, :edit, :update, :show]
   end
   
   def show
-    @todolist = Todolist.find(params[:id])
+    @todolist = current_user.todolists.find_by(id: params[:id])
+    if @todolist.nil?
+      @todolist = Todolist.find(params[:id])
+    end
     @user = current_user
-    return redirect_to root_url if @todolist.nil?
   end
   
   def destroy

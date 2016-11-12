@@ -37,11 +37,7 @@
            </tbody>
         </table>
         <% if current_user == @todolist.user %>
-        <%= link_to "このリストを編集する", edit_todolist_path %>
-        <% end %>
-        <% if current_user == @todolist.user %>
-        <%= link_to "このリストを削除する", todolist_path, method: :delete,
-                                       data: { confirm: "You sure?" } %>
+        <%= link_to "内容を変更する", edit_todolist_path %>
         <% end %>
    </div>
 </div>
