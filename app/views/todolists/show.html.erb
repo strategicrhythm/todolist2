@@ -23,7 +23,7 @@
             <tr>
               <td><%= @todolist.things %></td>
               <td><%= @todolist.note %></td>
-              <td></td>
+              <td><%= render 'todolists/move', object: @todolist %></td>
             </tr>
 
             <% @todolist.listtables.each do |listtable| %>

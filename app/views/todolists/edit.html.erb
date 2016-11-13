@@ -20,7 +20,7 @@
             <tr>
                 <td><%= f.text_field :things, class: 'form-control' %></td>
                 <td><%= f.text_field :note, class: 'form-control' %></td>
-                <td></td>
+                <td><%= f.select :situation, Todolist.situations.keys, class: 'form-control' %></td>
                 <td></td>
                 <td></td>
                 <td></td>             
