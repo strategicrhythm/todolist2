@@ -11,16 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161113085441) do
+ActiveRecord::Schema.define(version: 20161114083212) do
 
   create_table "listtables", force: :cascade do |t|
     t.integer  "todolist_id"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.string   "things"
     t.string   "note"
     t.string   "title"
-    t.integer  "situation",   default: 0
+    t.integer  "situation",           default: 0
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "listtables", ["todolist_id", "created_at"], name: "index_listtables_on_todolist_id_and_created_at"
@@ -39,12 +43,16 @@ ActiveRecord::Schema.define(version: 20161113085441) do
 
   create_table "todolists", force: :cascade do |t|
     t.integer  "user_id"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.string   "title"
     t.string   "things"
     t.string   "note"
-    t.integer  "situation",  default: 0
+    t.integer  "situation",           default: 0
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "todolists", ["user_id", "created_at"], name: "index_todolists_on_user_id_and_created_at"

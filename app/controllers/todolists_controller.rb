@@ -47,8 +47,8 @@ before_action :logged_in_user, only: [:create, :edit, :update, :show]
   
   def todolist_params
         params.require(:todolist).permit(
-          :title, :things, :note, :situation,
-          listtables_attributes: [:id, :todolist_id, :title, :things, :note, :situation, :_destroy]
+          :title, :things, :note, :situation, :avatar,
+          listtables_attributes: [:id, :todolist_id, :title, :things, :note, :situation, :avatar, :_destroy]
         )
   end
   

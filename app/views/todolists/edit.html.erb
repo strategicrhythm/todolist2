@@ -21,7 +21,7 @@
                 <td><%= f.text_field :things, class: 'form-control' %></td>
                 <td><%= f.text_field :note, class: 'form-control' %></td>
                 <td><%= f.select :situation, Todolist.situations.keys, class: 'form-control' %></td>
-                <td></td>
+                <td><%= f.file_field :avatar %></td>
                 <td></td>
                 <td></td>             
             </tr>
@@ -29,7 +29,8 @@
                 <td><%= q.text_field :things, class: 'form-control' %></td>
                 <td><%= q.text_field :note, class: 'form-control' %></td>
                 <td><%= q.select :situation, Listtable.situations.keys, class: 'form-control' %></td>
-                <td></td>
+                <td><%= q.file_field :avatar %>
+</td>
                 <td></td>
                 <td><%= q.remove_nested_fields_link 'Delete', class: 'btn btn-danger', role: 'button' %></td>
             <% end %>

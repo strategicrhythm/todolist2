@@ -19,11 +19,13 @@
                <th>やること</th>
                <th>メモ</th>
                <th>状況</th>
+               <th>画像</th>
             </tr>
             <tr>
               <td><%= @todolist.things %></td>
               <td><%= @todolist.note %></td>
               <td><%= render 'todolists/move', object: @todolist %></td>
+              <td><%= image_tag @todolist.avatar.url(:thumb) %></td>
             </tr>
 
             <% @todolist.listtables.each do |listtable| %>
@@ -32,6 +34,7 @@
                <td><%= listtable.things %></td>
                <td><%= listtable.note %></td>
                <td><%= render 'todolists/action', object: listtable %></td>
+               <td><%= image_tag listtable.avatar.url(:thumb) %></td>
             </tr>
             <% end %>
            </tbody>

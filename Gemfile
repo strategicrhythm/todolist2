@@ -28,6 +28,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'nested_form_fields'
 
+gem 'paperclip'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
