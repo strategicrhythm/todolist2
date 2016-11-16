@@ -1,4 +1,4 @@
-<%= form_for(@todolist, html:{class: 'form-horizontal'}) do |f| %>
+
 <div class="row">
   <aside class="col-md-6">
     <section class="user_info">
@@ -40,8 +40,9 @@
            </tbody>
         </table>
         <% if current_user == @todolist.user %>
+        <%= current_user.email %>
+        <%= @todolist.user.email %>
         <%= link_to "内容を変更する", edit_todolist_path %>
         <% end %>
    </div>
 </div>
-<% end %>
