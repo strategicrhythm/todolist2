@@ -31,10 +31,16 @@ before_action :logged_in_user, only: [:create, :edit, :update, :show]
   def edit
      @todolist = current_user.todolists.find_by(id: params[:id])
      @user = current_user
+    if @todolist.nil?
+      @todolist = Todolist.find(params[:id])
+    end
   end
   
   def update
     @todolist = current_user.todolists.find_by(id: params[:id])
+    if @todolist.nil?
+      @todolist = Todolist.find(params[:id])
+    end
     if @todolist.update_attributes(todolist_params)
       flash[:success] = "Todolist updated"
       redirect_to @todolist
@@ -47,7 +53,7 @@ before_action :logged_in_user, only: [:create, :edit, :update, :show]
   
   def todolist_params
         params.require(:todolist).permit(
-          :title, :things, :note, :situation, :avatar,
+          :title, :things, :note, :situation, :avatar, :approver, :status,
           listtables_attributes: [:id, :todolist_id, :title, :things, :note, :situation, :avatar, :_destroy]
         )
   end

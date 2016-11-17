@@ -1,0 +1,8 @@
+
+  <% if object.status == "unapprove" %>
+    <%= render 'todolists/unapprove' %>
+  <% elsif object.status == "approve" %>
+    <%= render 'todolists/approve' %>
+  <% else %>
+    <%= render 'todolists/back' %>
+  <% end %>

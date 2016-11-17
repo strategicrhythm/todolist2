@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161114083212) do
+ActiveRecord::Schema.define(version: 20161117092451) do
 
   create_table "listtables", force: :cascade do |t|
     t.integer  "todolist_id"
@@ -53,6 +53,8 @@ ActiveRecord::Schema.define(version: 20161114083212) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "approver"
+    t.integer  "status",              default: 0
   end
 
   add_index "todolists", ["user_id", "created_at"], name: "index_todolists_on_user_id_and_created_at"

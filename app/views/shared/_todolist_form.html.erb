@@ -10,6 +10,10 @@
             </tr>
             <td colspan="3"><%= f.text_field :title, class: 'form-control' %></td>
             <tr>
+               <th colspan="3">承認者(メールアドレス)</th>
+            </tr>
+            <td colspan="3"><%= f.text_field :approver, class: 'form-control' %></td>
+            <tr>
                <th>やること</th>
                <th>期日</th>
                <th>Action</th>
@@ -18,6 +22,7 @@
                 <td><%= f.text_field :things, class: 'form-control' %></td>
                 <td><%= f.text_field :note, class: 'form-control' %></td>
                 <% f.select :situation, Todolist.situations.keys %>
+                <% f.select :status, Todolist.statuses.keys %>
                 <td></td>             
             </tr>
             <%= f.nested_fields_for :listtables, wrapper_tag: :tr do |q| %>
