@@ -43,6 +43,7 @@ before_action :logged_in_user, only: [:create, :edit, :update, :show]
     end
     if @todolist.update_attributes(todolist_params)
       flash[:success] = "Todolist updated"
+      @todolist.save
       redirect_to @todolist
     else
       render 'edit'
@@ -54,7 +55,7 @@ before_action :logged_in_user, only: [:create, :edit, :update, :show]
   def todolist_params
         params.require(:todolist).permit(
           :title, :things, :note, :situation, :avatar, :approver, :status,
-          listtables_attributes: [:id, :todolist_id, :title, :things, :note, :situation, :avatar, :_destroy]
+          listtables_attributes: [:id, :todolist_id, :title, :things, :note, :situation, :avatar, :status, :_destroy]
         )
   end
   

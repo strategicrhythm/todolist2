@@ -29,6 +29,7 @@
                 <td><%= q.text_field :things, class: 'form-control' %></td>
                 <td><%= q.text_field :note, class: 'form-control' %></td>
                 <% q.select :situation, Listtable.situations.keys %>
+                <% q.select :status, Listtable.statuses.keys %>
                 <td><%= q.remove_nested_fields_link 'Delete', class: 'btn btn-danger', role: 'button' %></td>
             <% end %>
 

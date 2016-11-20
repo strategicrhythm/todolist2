@@ -223,7 +223,21 @@ aside {
 select {
     border-radius: 5px;
     padding: 5px;
+    background: #F5F5F5;
 }
+
+
+input.disabled {
+    border: 0px;
+    padding: 5px;
+    background: #F5F5F5;
+}
+
+td {
+    background: #FFF;
+}
+
+
 
 .action {
   position: absolute;

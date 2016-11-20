@@ -37,11 +37,12 @@
                <td><%= listtable.note %></td>
                <td><%= render 'todolists/action', object: listtable %></td>
                <td><%= image_tag listtable.avatar.url(:thumb) %></td>
-               <td></td>
+               <td><%= render 'todolists/judge', object: listtable %></td>
             </tr>
             <% end %>
            </tbody>
         </table>
+        <div id="product-modal" class="modal fade"></div>
         <% if current_user == @todolist.user %>
         <%= link_to "内容を変更する", edit_todolist_path %>
         <% end %>
