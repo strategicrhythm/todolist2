@@ -36,4 +36,9 @@ class User < ActiveRecord::Base
   def feed_items
     Todolist.where(user_id: following_user_ids + [self.id])
   end
+  
+  def latest_items
+    Todolist.where(user_id: self.id)
+  end
+  
 end

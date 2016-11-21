@@ -10,3 +10,35 @@
     <% end %>
   </span>
 </li>
+
+<table class="table table-striped table-bordered table-hover">
+           
+          <tbody>
+          　<tr>
+               <th>やること</th>
+               <th>メモ</th>
+               <th>状況</th>
+               <th>画像</th>
+               <th>ステータス</th>
+            </tr>
+            <tr>
+              <td><%= todolist.things %></td>
+              <td><%= todolist.note %></td>
+              <td><%= render 'todolists/move', object: todolist %></td>
+              <td><%= image_tag todolist.avatar.url(:thumb) %></td>
+              <td><%= render 'todolists/judge', object: todolist %></td>
+            </tr>
+
+            <% todolist.listtables.each do |listtable| %>
+            <tr>
+                
+               <td><%= listtable.things %></td>
+               <td><%= listtable.note %></td>
+               <td><%= render 'todolists/action', object: listtable %></td>
+               <td><%= image_tag listtable.avatar.url(:thumb) %></td>
+               <td><%= render 'todolists/judge', object: listtable %></td>
+            </tr>
+            <% end %>
+           </tbody>
+        </table>
+
