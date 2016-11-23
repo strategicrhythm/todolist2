@@ -1,22 +1,65 @@
-<div class="row">
-  <aside class="col-md-6">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-    </section>
-    <section class="micropost_form">
+<% if logged_in? %>
+  <div class="row">
+  </div>
+  
+  <div>
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="active" role="presentation">
+      <a aria-controls="tab_a" data-toggle="tab" href="#tab_a" role="tab">最近作ったリスト</a>
+    </li>
+    <li role="presentation">
+      <a aria-controls="tab_b" data-toggle="tab" href="#tab_b" role="tab">タイムライン</a>
+    </li>
+    <li role="presentation" class="dropdown">
+      <a href="#" class="dropdown-toggle" id="myTabDrop1" data-toggle="dropdown" aria-controls="myTabDrop1-contents" aria-expanded="false">リスト作成<span class="caret"></span></a> 
+       <ul class="dropdown-menu" aria-labelledby="myTabDrop1" id="myTabDrop1-contents"> 
+        <li class=""><a href="#dropdown1" role="tab" id="dropdown1-tab" data-toggle="tab" aria-controls="dropdown1" aria-expanded="false">チェックリスト(承認者付き)</a></li> 
+        <li class=""><a href="#dropdown2" role="tab" id="dropdown2-tab" data-toggle="tab" aria-controls="dropdown2" aria-expanded="false">@mdo</a></li> 
+       </ul> 
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="tab_a" role="tabpanel">
+     <div class="col-md-12">
+      <h3>最近作ったリスト</h3>
+       <%= render 'shared/latest' %>
+     </div>
+    </div>
+    
+    <div class="tab-pane" id="tab_b" role="tabpanel">
+     <div class="col-md-12">
+      <h3>Todolist Feed</h3>
+       <%= render 'shared/feed' %>
+     </div>
+    </div>
+    
+    <div class="tab-pane fade" role="tabpanel" id="dropdown1" aria-labelledby="dropdown1-tab">
+      <aside class="class= col-md-12">
+       <section class="user_info">
+        <%= render 'shared/user_info' %>
+       </section>
+       <section class="stats">
+             <%= render 'shared/stats' %>
+       </section>
+       <section class="micropost_form">
         <%= render 'shared/todolist_form' %>
-    </section>
-  </aside>
-  <div class="col-md-6">
-    <%= render 'follow_form' if logged_in? %>
-    <% if @user.todolists.any? %>
-      <h3>Todolists (<%= @user.todolists.count %>)</h3>
-      <ol class="todolists">
-        <%= render partial: 'todolists/todolist', collection: @todolists %>
-      </ol>
-    <% end %>
+       </section>
+      </aside>
+    </div>
+    
+    <div class="tab-pane fade" role="tabpanel" id="dropdown2" aria-labelledby="dropdown2-tab">
+      <p>
+        タブC-2
+      </p>
+    </div>
+    
   </div>
 </div>
+  
+<% else %>
+  <div class="center jumbotron">
+    <h1>Welcome to the todolist</h1>
+
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  </div>
+<% end %>
