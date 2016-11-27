@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161119094843) do
+ActiveRecord::Schema.define(version: 20161127085013) do
 
   create_table "listtables", force: :cascade do |t|
     t.integer  "todolist_id"
@@ -30,6 +30,16 @@ ActiveRecord::Schema.define(version: 20161119094843) do
 
   add_index "listtables", ["todolist_id", "created_at"], name: "index_listtables_on_todolist_id_and_created_at"
   add_index "listtables", ["todolist_id"], name: "index_listtables_on_todolist_id"
+
+  create_table "qalists", force: :cascade do |t|
+    t.integer  "user_id"
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "qalists", ["user_id", "created_at"], name: "index_qalists_on_user_id_and_created_at"
+  add_index "qalists", ["user_id"], name: "index_qalists_on_user_id"
 
   create_table "relationships", force: :cascade do |t|
     t.integer  "follower_id"

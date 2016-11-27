@@ -1,0 +1,38 @@
+<%= form_for(@qalist, html:{class: 'form-horizontal'}) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  
+  <div class="field">
+
+     <table class="table table-striped table-bordered table-hover">
+          <tbody>
+             <tr>
+               <th colspan="3">リストタイトル</th>
+            </tr>
+            <td colspan="3"></td>
+            <tr>
+               <th colspan="3">質問の回答者(メールアドレス)</th>
+            </tr>
+            <td colspan="3"></td>
+            <tr>
+               <th></th>
+               <th>質問</th>
+               <th>回答期限</th>
+            </tr>
+            <tr>
+                <td><%= f.text_field :content, class: 'form-control' %></td>
+                <td></td>
+                <td></td>             
+            </tr>
+            <tr>
+                <td><%= f.text_field :content, class: 'form-control' %></td>
+                <td></td>
+                <td></td>             
+            </tr>
+
+
+          </tbody>
+       </table>
+
+  </div>
+  <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>

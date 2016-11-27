@@ -8,6 +8,8 @@ class UsersController < ApplicationController
     @todolist = current_user.todolists.build if logged_in?
     @latest_items = current_user.latest_items.order(created_at: :desc).limit(1) if logged_in?
     @feed_items = current_user.feed_items.includes(:user).order(created_at: :desc) if logged_in?
+    @qalists = @user.qalists.order(created_at: :desc)
+    @qalist = current_user.qalists.build if logged_in?
   end
   
   def new
@@ -69,6 +71,10 @@ class UsersController < ApplicationController
           :title, :things, :note, :situation, :avatar, :approver, :status,
           listtables_attributes: [:id, :todolist_id, :title, :things, :note, :situation, :avatar, :status, :_destroy]
         )
+  end
+  
+  def qalist_params
+    params.require(:qalist).permit(:content)
   end
   
 end

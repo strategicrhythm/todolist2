@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   end
   resources :todolists
   resources :relationships, only: [:create, :destroy]
+  resources :qalists
 end

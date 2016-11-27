@@ -14,7 +14,7 @@
       <a href="#" class="dropdown-toggle" id="myTabDrop1" data-toggle="dropdown" aria-controls="myTabDrop1-contents" aria-expanded="false">リスト作成<span class="caret"></span></a> 
        <ul class="dropdown-menu" aria-labelledby="myTabDrop1" id="myTabDrop1-contents"> 
         <li class=""><a href="#dropdown1" role="tab" id="dropdown1-tab" data-toggle="tab" aria-controls="dropdown1" aria-expanded="false">チェックリスト(承認者付き)</a></li> 
-        <li class=""><a href="#dropdown2" role="tab" id="dropdown2-tab" data-toggle="tab" aria-controls="dropdown2" aria-expanded="false">@mdo</a></li> 
+        <li class=""><a href="#dropdown2" role="tab" id="dropdown2-tab" data-toggle="tab" aria-controls="dropdown2" aria-expanded="false">Q&Aリスト</a></li> 
        </ul> 
     </li>
   </ul>
@@ -23,6 +23,10 @@
      <div class="col-md-12">
       <h3>最近作ったリスト</h3>
        <%= render 'shared/latest' %>
+     </div>
+     <div class="col-md-12">
+      <h3>最近作ったQ&Aリスト</h3>
+       <%= render @qalists %>
      </div>
     </div>
     
@@ -48,9 +52,17 @@
     </div>
     
     <div class="tab-pane fade" role="tabpanel" id="dropdown2" aria-labelledby="dropdown2-tab">
-      <p>
-        タブC-2
-      </p>
+      <aside class="class= col-md-12">
+       <section class="user_info">
+        <%= render 'shared/user_info' %>
+       </section>
+       <section class="stats">
+             <%= render 'shared/stats' %>
+       </section>
+       <section class="micropost_form">
+        <%= render 'shared/qalist_form' %>
+       </section>
+      </aside>
     </div>
     
   </div>
