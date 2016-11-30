@@ -2,7 +2,8 @@
   <%= render 'shared/error_messages', object: f.object %>
   
   <div class="field">
-
+   <div class="panel-group" role="tablist"> 
+   <div class="panel panel-default"> 
      <table class="table table-striped table-bordered table-hover">
           <tbody>
              <tr>
@@ -19,19 +20,98 @@
                <th>回答期限</th>
             </tr>
             <tr>
-                <td><%= f.text_field :content, class: 'form-control' %></td>
-                <td></td>
-                <td></td>             
+                <td>1</td>
+                <td><%= f.text_field :query0, class: 'form-control' %></td>
+                <td><%= f.text_field :line0, class: 'form-control' %></td>
+                    <%= f.hidden_field :tdnumber0 %>
             </tr>
             <tr>
-                <td><%= f.text_field :content, class: 'form-control' %></td>
-                <td></td>
-                <td></td>             
+                <td>2</td>
+                <td><%= f.text_field :query1, class: 'form-control' %></td>
+                <td><%= f.text_field :line1, class: 'form-control' %></td>
+                    <%= f.hidden_field :tdnumber1 %>          
+            </tr>
+            
+            <tr>
+                <td>3</td>
+                <td><%= f.text_field :query2, class: 'form-control' %></td>
+                <td><%= f.text_field :line2, class: 'form-control' %></td>
+                    <%= f.hidden_field :tdnumber2 %>          
             </tr>
 
+            <tr>
+                <td>4</td>
+                <td><%= f.text_field :query3, class: 'form-control' %></td>
+                <td><%= f.text_field :line3, class: 'form-control' %></td>
+                    <%= f.hidden_field :tdnumber3 %>          
+            </tr>
+            
+            <tr>
+                <td>5</td>
+                <td><%= f.text_field :query4, class: 'form-control' %></td>
+                <td><%= f.text_field :line4, class: 'form-control' %></td>
+                    <%= f.hidden_field :tdnumber4 %>          
+            </tr>
 
           </tbody>
        </table>
+       </div> 
+     </div> 
+       
+     <div class="panel-group" role="tablist"> 
+      <div class="panel panel-default"> 
+       <div class="panel-heading" role="tab" id="collapseListGroupHeading1"> 
+        <h4 class="panel-title"> 
+         <a href="#collapseListGroup1" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapseListGroup1"> +質問を追加する </a> 
+        </h4> 
+       </div> 
+        <div class="panel-collapse collapse" role="tabpanel" id="collapseListGroup1" aria-labelledby="collapseListGroupHeading1" aria-expanded="false" style="height: 0px;"> 
+         <table class="table table-striped table-bordered table-hover">
+          <tbody>
+             
+               <th></th>
+               <th>質問</th>
+               <th>回答期限</th>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td><%= f.text_field :query5, class: 'form-control' %></td>
+                <td><%= f.text_field :line5, class: 'form-control' %></td>
+                    <%= f.hidden_field :tdnumber5 %>
+            </tr>
+             <tr>
+                <td>7</td>
+                <td><%= f.text_field :query6, class: 'form-control' %></td>
+                <td><%= f.text_field :line6, class: 'form-control' %></td>
+                    <%= f.hidden_field :tdnumber6 %>          
+            </tr>
+            
+            <tr>
+                <td>8</td>
+                <td><%= f.text_field :query7, class: 'form-control' %></td>
+                <td><%= f.text_field :line7, class: 'form-control' %></td>
+                    <%= f.hidden_field :tdnumber7 %>          
+            </tr>
+
+            <tr>
+                <td>9</td>
+                <td><%= f.text_field :query8, class: 'form-control' %></td>
+                <td><%= f.text_field :line8, class: 'form-control' %></td>
+                    <%= f.hidden_field :tdnumber8 %>          
+            </tr>
+            
+            <tr>
+                <td>10</td>
+                <td><%= f.text_field :query9, class: 'form-control' %></td>
+                <td><%= f.text_field :line9, class: 'form-control' %></td>
+                    <%= f.hidden_field :tdnumber9 %>          
+            </tr>
+
+          </tbody>
+       </table>
+        </div> 
+      </div> 
+     </div>  
 
   </div>
   <%= f.submit "Post", class: "btn btn-primary" %>
