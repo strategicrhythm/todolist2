@@ -25,6 +25,12 @@
        <%= render 'shared/latest' %>
      </div>
     </div>
+    <div class="tab-pane active" id="tab_a" role="tabpanel">
+     <div class="col-md-12">
+      <h3>最近作ったリスト</h3>
+       <%= render partial: 'qalists/qalist', collection: @qalists %>
+     </div>
+    </div>
     
     <div class="tab-pane" id="tab_b" role="tabpanel">
      <div class="col-md-12">

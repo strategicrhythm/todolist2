@@ -43,4 +43,8 @@ class User < ActiveRecord::Base
     Todolist.where(user_id: self.id)
   end
   
+  def latest_qalists
+    Qalist.where(user_id: self.id)
+  end
+  
 end

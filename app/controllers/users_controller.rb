@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     @feed_items = current_user.feed_items.includes(:user).order(created_at: :desc) if logged_in?
     @qalists = @user.qalists.order(created_at: :desc)
     @qalist = current_user.qalists.build if logged_in?
+    @latest_qalists = current_user.latest_qalists.order(created_at: :desc).limit(1) if logged_in?
   end
   
   def new
@@ -74,7 +75,11 @@ class UsersController < ApplicationController
   end
   
   def qalist_params
-    params.require(:qalist).permit(:content)
+    params.require(:qalist).permit(:title, :content, :answer, :query0, :line0, 
+    :tdnumber0, :query1, :line1, :tdnumber1, :query2, :line2, :tdnumber2, 
+    :query3, :line3, :tdnumber3, :query4, :line4, :tdnumber4, :query5, :line5, :tdnumber5, 
+    :query6, :line6, :tdnumber6, :query7, :line7, :tdnumber7, :query8, :line8, :tdnumber8, 
+    :query9, :line9, :tdnumber9)
   end
   
 end

@@ -29,6 +29,10 @@ def show
   
   private
   def qalist_params
-    params.require(:qalist).permit(:content)
+    params.require(:qalist).permit(:title, :content, :answer, :query0, :line0, 
+    :tdnumber0, :query1, :line1, :tdnumber1, :query2, :line2, :tdnumber2, 
+    :query3, :line3, :tdnumber3, :query4, :line4, :tdnumber4, :query5, :line5, :tdnumber5, 
+    :query6, :line6, :tdnumber6, :query7, :line7, :tdnumber7, :query8, :line8, :tdnumber8, 
+    :query9, :line9, :tdnumber9)
   end
 end

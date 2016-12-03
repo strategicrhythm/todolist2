@@ -1,7 +1,7 @@
 <li id="qalist-<%= qalist.id %>">
   <%= link_to gravatar_for(qalist.user, size: 50), qalist.user %>
   <span class="user"><%= link_to qalist.user.name, qalist.user %></span>
-  <span class="content"><%= qalist.content %></span>
+  <span class="content"><%= link_to qalist.title, qalist %></span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(qalist.created_at) %> ago.
     <% if current_user == qalist.user %>

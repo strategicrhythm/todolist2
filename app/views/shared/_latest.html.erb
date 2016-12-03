@@ -1,6 +1,6 @@
-<% if @latest_items.any? %>
+<% if @latest_items != nil %>
   <ol class="todolists">
     <%= render @latest_items %>
   </ol>
-
-<% end %>
+  <% end %>
+  

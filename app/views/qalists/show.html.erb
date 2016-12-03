@@ -1,0 +1,30 @@
+
+<div class="row">
+  <aside class="col-md-6">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+      <%= link_to "マイページへ戻る", @user %>
+    </section>
+  </aside>
+  <div class="col-md-12">
+      <h3><%= @qalist.title %></h3>
+       <h4>作成者<%= link_to @qalist.user.name, @qalist.user %></h4>
+        <table class="table table-striped table-bordered table-hover">
+           
+          <tbody>
+          　<tr>
+               <th>質問</th>
+               <th>メモ</th>
+               <th>状況</th>
+               <th>ステータス</th>
+            </tr>
+            <% if @qalist.query0 != nil %>
+            <%= render 'qalists/query0', object: @qalist %>
+        　　<% end %>
+           </tbody>
+        </table>
+   </div>
+</div>

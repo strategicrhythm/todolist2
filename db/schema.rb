@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161130111931) do
+ActiveRecord::Schema.define(version: 20161203085215) do
 
   create_table "listtables", force: :cascade do |t|
     t.integer  "todolist_id"
@@ -36,36 +36,6 @@ ActiveRecord::Schema.define(version: 20161130111931) do
     t.text     "content"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
-    t.text     "question1"
-    t.string   "deadline1"
-    t.integer  "tdid1"
-    t.text     "question2"
-    t.string   "deadline2"
-    t.integer  "tdid2"
-    t.text     "question3"
-    t.string   "deadline3"
-    t.integer  "tdid3"
-    t.text     "question4"
-    t.string   "deadline4"
-    t.integer  "tdid4"
-    t.text     "question5"
-    t.string   "deadline5"
-    t.integer  "tdid5"
-    t.text     "question6"
-    t.string   "deadline6"
-    t.integer  "tdid6"
-    t.text     "question7"
-    t.string   "deadline7"
-    t.integer  "tdid7"
-    t.text     "question8"
-    t.string   "deadline8"
-    t.integer  "tdid8"
-    t.text     "question9"
-    t.string   "deadline9"
-    t.integer  "tdid9"
-    t.text     "question10"
-    t.string   "deadline10"
-    t.integer  "tdid10"
     t.text     "query0"
     t.string   "line0"
     t.integer  "tdnumber0",  default: 0
@@ -96,6 +66,8 @@ ActiveRecord::Schema.define(version: 20161130111931) do
     t.text     "query9"
     t.string   "line9"
     t.integer  "tdnumber9",  default: 9
+    t.text     "title"
+    t.string   "answer"
   end
 
   add_index "qalists", ["user_id", "created_at"], name: "index_qalists_on_user_id_and_created_at"
