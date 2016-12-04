@@ -17,12 +17,39 @@
           <tbody>
           　<tr>
                <th>質問</th>
-               <th>メモ</th>
+               <th>期日</th>
                <th>状況</th>
                <th>ステータス</th>
             </tr>
             <% if @qalist.query0 != nil %>
             <%= render 'qalists/query0', object: @qalist %>
+        　　<% end %>
+        　　<% if @qalist.query1 != nil %>
+            <%= render 'qalists/query1', object: @qalist %>
+        　　<% end %>
+        　　<% if @qalist.query2.present? %>
+            <%= render 'qalists/query2', object: @qalist %>
+        　　<% end %>
+        　　<% if @qalist.query3.present? %>
+            <%= render 'qalists/query3', object: @qalist %>
+        　　<% end %>
+        　　<% if @qalist.query4.present? %>
+            <%= render 'qalists/query4', object: @qalist %>
+        　　<% end %>
+        　　<% if @qalist.query5.present? %>
+            <%= render 'qalists/query5', object: @qalist %>
+        　　<% end %>
+        　　<% if @qalist.query6.present? %>
+            <%= render 'qalists/query6', object: @qalist %>
+        　　<% end %>
+        　　<% if @qalist.query7.present? %>
+            <%= render 'qalists/query7', object: @qalist %>
+        　　<% end %>
+        　　<% if @qalist.query8.present? %>
+            <%= render 'qalists/query8', object: @qalist %>
+        　　<% end %>
+        　　<% if @qalist.query9.present? %>
+            <%= render 'qalists/query9', object: @qalist %>
         　　<% end %>
            </tbody>
         </table>

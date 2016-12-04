@@ -1,7 +1,7 @@
 <li id="qalist-<%= qalist.id %>">
   <%= link_to gravatar_for(qalist.user, size: 50), qalist.user %>
   <span class="user"><%= link_to qalist.user.name, qalist.user %></span>
-  <span class="content"><%= link_to qalist.title, qalist %></span>
+  <span class="title"><%= link_to qalist.title, qalist %></span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(qalist.created_at) %> ago.
     <% if current_user == qalist.user %>
@@ -10,3 +10,95 @@
     <% end %>
   </span>
 </li>
+
+<table class="table table-striped table-bordered table-hover">
+           
+          <tbody>
+          　<tr>
+               <th>質問</th>
+               <th>期日</th>
+               <th>状況</th>
+               <th>ステータス</th>
+            </tr>
+            <% if qalist.query0.present? %>
+            <tr>
+              <td><%= qalist.query0 %></td>
+              <td><%= qalist.line0 %></td>
+              <td></td>
+              <td></td>
+            </tr>
+        　　<% end %>
+        　　<% if qalist.query1.present? %>
+            <tr>
+              <td><%= qalist.query1 %></td>
+              <td><%= qalist.line1 %></td>
+              <td></td>
+              <td></td>
+            </tr>
+        　　<% end %>
+        　　<% if qalist.query2.present? %>
+            <tr>
+              <td><%= qalist.query2 %></td>
+              <td><%= qalist.line2 %></td>
+              <td></td>
+              <td></td>
+            </tr>
+        　　<% end %>
+        　　<% if qalist.query3.present? %>
+            <tr>
+              <td><%= qalist.query3 %></td>
+              <td><%= qalist.line3 %></td>
+              <td></td>
+              <td></td>
+            </tr>
+        　　<% end %>
+        　　<% if qalist.query4.present? %>
+            <tr>
+              <td><%= qalist.query4 %></td>
+              <td><%= qalist.line4 %></td>
+              <td></td>
+              <td></td>
+            </tr>
+        　　<% end %>
+        　　<% if qalist.query5.present? %>
+            <tr>
+              <td><%= qalist.query5 %></td>
+              <td><%= qalist.line5 %></td>
+              <td></td>
+              <td></td>
+            </tr>
+        　　<% end %>
+        　　<% if qalist.query6.present? %>
+            <tr>
+              <td><%= qalist.query6 %></td>
+              <td><%= qalist.line6 %></td>
+              <td></td>
+              <td></td>
+            </tr>
+        　　<% end %>
+        　　<% if qalist.query7.present? %>
+            <tr>
+              <td><%= qalist.query7 %></td>
+              <td><%= qalist.line7 %></td>
+              <td></td>
+              <td></td>
+            </tr>
+        　　<% end %>
+        　　<% if qalist.query8.present? %>
+            <tr>
+              <td><%= qalist.query8 %></td>
+              <td><%= qalist.line8 %></td>
+              <td></td>
+              <td></td>
+            </tr>
+        　　<% end %>
+        　　<% if qalist.query9.present? %>
+            <tr>
+              <td><%= qalist.query9 %></td>
+              <td><%= qalist.line9 %></td>
+              <td></td>
+              <td></td>
+            </tr>
+        　　<% end %>
+           </tbody>
+</table>
