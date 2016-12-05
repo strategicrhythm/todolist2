@@ -19,12 +19,13 @@
                <th>質問</th>
                <th>期日</th>
                <th>状況</th>
-               <th>ステータス</th>
+               <th>コメントする</th>
+               <th>コメントを見る</th>
             </tr>
-            <% if @qalist.query0 != nil %>
+            <% if @qalist.query0.present? %>
             <%= render 'qalists/query0', object: @qalist %>
         　　<% end %>
-        　　<% if @qalist.query1 != nil %>
+        　　<% if @qalist.query1.present? %>
             <%= render 'qalists/query1', object: @qalist %>
         　　<% end %>
         　　<% if @qalist.query2.present? %>
@@ -53,5 +54,8 @@
         　　<% end %>
            </tbody>
         </table>
+        <% if current_user == @qalist.user %>
+        <%= link_to "内容を変更する", edit_qalist_path %>
+        <% end %>
    </div>
 </div>

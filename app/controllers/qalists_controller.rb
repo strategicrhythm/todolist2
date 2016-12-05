@@ -1,5 +1,5 @@
 class QalistsController < ApplicationController
-  before_action :logged_in_user, only: [:create]
+ before_action :logged_in_user, only: [:create, :edit, :update, :show]
 
   def create
     @qalist = current_user.qalists.build(qalist_params)
@@ -25,6 +25,28 @@ def show
     @qalist.destroy
     flash[:success] = "qalist deleted"
     redirect_to request.referrer || root_url
+  end
+  
+  def edit
+     @qalist = current_user.qalists.find_by(id: params[:id])
+     @user = current_user
+    if @qalist.nil?
+      @qalist = Qalist.find(params[:id])
+    end
+  end
+  
+  def update
+    @qalist = current_user.qalists.find_by(id: params[:id])
+    if @qalist.nil?
+      @qalist = Qalist.find(params[:id])
+    end
+    if @qalist.update_attributes(qalist_params)
+      flash[:success] = "Q&Alist updated"
+      @qalist.save
+      redirect_to @qalist
+    else
+      render 'edit'
+    end
   end
   
   private
