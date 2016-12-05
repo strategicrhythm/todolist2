@@ -7,8 +7,12 @@
     <li class="active" role="presentation">
       <a aria-controls="tab_a" data-toggle="tab" href="#tab_a" role="tab">最近作ったリスト</a>
     </li>
-    <li role="presentation">
-      <a aria-controls="tab_b" data-toggle="tab" href="#tab_b" role="tab">タイムライン</a>
+    <li role="presentation" class="dropdown">
+      <a href="#" class="dropdown-toggle" id="myTabDrop2" data-toggle="dropdown" aria-controls="myTabDrop2-contents" aria-expanded="false">タイムライン<span class="caret"></span></a> 
+       <ul class="dropdown-menu" aria-labelledby="myTabDrop2" id="myTabDrop2-contents"> 
+        <li class=""><a href="#dropdown3" role="tab" id="dropdown3-tab" data-toggle="tab" aria-controls="dropdown3" aria-expanded="false">チェックリスト</a></li> 
+        <li class=""><a href="#dropdown4" role="tab" id="dropdown4-tab" data-toggle="tab" aria-controls="dropdown4" aria-expanded="false">Q&Aリスト</a></li> 
+       </ul> 
     </li>
     <li role="presentation" class="dropdown">
       <a href="#" class="dropdown-toggle" id="myTabDrop1" data-toggle="dropdown" aria-controls="myTabDrop1-contents" aria-expanded="false">リスト作成<span class="caret"></span></a> 
@@ -32,12 +36,20 @@
      </div>
     </div>
     
-    <div class="tab-pane" id="tab_b" role="tabpanel">
+    <div class="tab-pane fade" id="dropdown3" role="tabpanel" aria-labelledby="dropdown3-tab">
      <div class="col-md-12">
       <h3>Todolist Feed</h3>
        <%= render 'shared/feed' %>
      </div>
     </div>
+    
+    <div class="tab-pane fade" id="dropdown4" role="tabpanel" aria-labelledby="dropdown4-tab">
+     <div class="col-md-12">
+      <h3>Q&Alist Feed</h3>
+       <%= render 'shared/feed_qalist' %>
+     </div>
+    </div>
+    
     
     <div class="tab-pane fade" role="tabpanel" id="dropdown1" aria-labelledby="dropdown1-tab">
       <aside class="class= col-md-12">

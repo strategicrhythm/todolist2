@@ -47,4 +47,8 @@ class User < ActiveRecord::Base
     Qalist.where(user_id: self.id)
   end
   
+  def feed_qalists
+    Qalist.where(user_id: following_user_ids + [self.id])
+  end
+  
 end

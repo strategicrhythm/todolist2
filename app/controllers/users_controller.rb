@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     @qalists = @user.qalists.order(created_at: :desc)
     @qalist = current_user.qalists.build if logged_in?
     @latest_qalists = current_user.latest_qalists.order(created_at: :desc).limit(1) if logged_in?
+    @feed_qalists = current_user.feed_qalists.includes(:user).order(created_at: :desc) if logged_in?
   end
   
   def new
