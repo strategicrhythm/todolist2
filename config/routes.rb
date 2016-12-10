@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   resources :todolists
   resources :relationships, only: [:create, :destroy]
   resources :qalists
+  resources :comments
 end

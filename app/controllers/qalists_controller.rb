@@ -17,6 +17,8 @@ def show
       @qalist = Qalist.find(params[:id])
     end
     @user = current_user
+    @comment = current_user.comments.build if logged_in?
+    @comments = @user.comments.order(created_at: :desc)
   end
   
   def destroy

@@ -17,7 +17,11 @@ class User < ActiveRecord::Base
                                     dependent:   :destroy
   has_many :follower_users, through: :follower_relationships, source: :follower
   
-  has_many :qalists
+  has_many :qalists, dependent: :destroy
+  has_many :qalist_commnets, through: :qalists,  source: :comment
+  
+  has_many :comments, foreign_key: "user_id", dependent: :destroy
+  has_many :commented_qalists, through: :comments, source: :qalist
   
   # 他のユーザーをフォローする
   def follow(other_user)
