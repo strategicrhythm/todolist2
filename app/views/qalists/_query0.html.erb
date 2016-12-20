@@ -28,6 +28,8 @@
                         <div class="form-group">
                          <label for="message-text" class="control-label">Message:</label>
                           <%= f.text_area :content, placeholder: "Compose new comment...", class: 'form-control', :size => "20x10" %>
+                          <%= f.hidden_field :answer_id , :value => "@qalist.id" %>
+                          <%= f.hidden_field :answer_td_id , :value => "@qalist.line0" %>
                         </div>
                     
                       </div>
@@ -45,10 +47,10 @@
             </td>
               
             <td>
-              <% if @user.comments.any? %>
-               <h3>Comments (<%= @user.comments.count %>)</h3>
+              <% if @answered_comments.any? %>
+               <h3>Comments (<%= @answered_comments.count %>)</h3>
                 <ol class="comments">
-                  <%= render partial: 'comments/comment', collection: @comments %>
+                  <%= render partial: 'comments/comment', collection: @answered_comments %>
                 </ol>
               <% end %>
             </td>

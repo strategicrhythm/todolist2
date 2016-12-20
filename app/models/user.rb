@@ -8,20 +8,25 @@ class User < ActiveRecord::Base
   has_secure_password
   
   has_many :todolists
+  
   has_many :following_relationships, class_name:  "Relationship",
                                      foreign_key: "follower_id",
                                      dependent:   :destroy
   has_many :following_users, through: :following_relationships, source: :followed
+  
   has_many :follower_relationships, class_name:  "Relationship",
                                     foreign_key: "followed_id",
                                     dependent:   :destroy
   has_many :follower_users, through: :follower_relationships, source: :follower
   
-  has_many :qalists, dependent: :destroy
+  has_many :qalists
   has_many :qalist_commnets, through: :qalists,  source: :comment
   
-  has_many :comments, foreign_key: "user_id", dependent: :destroy
+  has_many :comments
   has_many :commented_qalists, through: :comments, source: :qalist
+  
+  has_many :answered_comments, class_name:  "Comment", foreign_key: "qalist_id", dependent:   :destroy
+  has_many :commented_qalists, through: :answered_comments, source: :qalist
   
   # 他のユーザーをフォローする
   def follow(other_user)
@@ -54,5 +59,10 @@ class User < ActiveRecord::Base
   def feed_qalists
     Qalist.where(user_id: following_user_ids + [self.id])
   end
+  
+  def answered_comments
+    Qalist.where(qalist_id: self.id)
+  end
+  
   
 end

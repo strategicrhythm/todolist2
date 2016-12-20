@@ -11,14 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161210084101) do
+ActiveRecord::Schema.define(version: 20161220100947) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "qalist_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.text     "content"
+    t.integer  "answer_id"
+    t.integer  "answer_td_id"
+    t.integer  "answer_td_id_1"
+    t.integer  "answer_td_id_2"
+    t.integer  "answer_td_id_3"
+    t.integer  "answer_td_id_4"
+    t.integer  "answer_td_id_5"
+    t.integer  "answer_td_id_6"
+    t.integer  "answer_td_id_7"
+    t.integer  "answer_td_id_8"
+    t.integer  "answer_td_id_9"
   end
 
   add_index "comments", ["qalist_id", "created_at"], name: "index_comments_on_qalist_id_and_created_at"
