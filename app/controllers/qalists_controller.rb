@@ -20,15 +20,15 @@ class QalistsController < ApplicationController
     @comment = current_user.comments.build if logged_in?
     @comments = @user.comments.order(created_at: :desc)
     @answered_comments = Comment.where(answer_id: '@qalist.id', answer_td_id: '@qalist.line0').order(created_at: :desc) if logged_in?
-    @answered_comments_1 = Comment.where(answer_id: '@qalist.id', answer_td_id: '@qalist.line1').order(created_at: :desc) if logged_in?
-    @answered_comments_2 = Comment.where(answer_id: '@qalist.id', answer_td_id: '@qalist.line2').order(created_at: :desc) if logged_in?
-    @answered_comments_3 = Comment.where(answer_id: '@qalist.id', answer_td_id: '@qalist.line3').order(created_at: :desc) if logged_in?
-    @answered_comments_4 = Comment.where(answer_id: '@qalist.id', answer_td_id: '@qalist.line4').order(created_at: :desc) if logged_in?
-    @answered_comments_5 = Comment.where(answer_id: '@qalist.id', answer_td_id: '@qalist.line5').order(created_at: :desc) if logged_in?
-    @answered_comments_6 = Comment.where(answer_id: '@qalist.id', answer_td_id: '@qalist.line6').order(created_at: :desc) if logged_in?
-    @answered_comments_7 = Comment.where(answer_id: '@qalist.id', answer_td_id: '@qalist.line7').order(created_at: :desc) if logged_in?
-    @answered_comments_8 = Comment.where(answer_id: '@qalist.id', answer_td_id: '@qalist.line8').order(created_at: :desc) if logged_in?
-    @answered_comments_9 = Comment.where(answer_id: '@qalist.id', answer_td_id: '@qalist.line9').order(created_at: :desc) if logged_in?
+    @answered_comments_1 = Comment.where(answer_id: '@qalist.id', answer_td_id_1: '@qalist.line1').order(created_at: :desc) if logged_in?
+    @answered_comments_2 = Comment.where(answer_id: '@qalist.id', answer_td_id_2: '@qalist.line2').order(created_at: :desc) if logged_in?
+    @answered_comments_3 = Comment.where(answer_id: '@qalist.id', answer_td_id_3: '@qalist.line3').order(created_at: :desc) if logged_in?
+    @answered_comments_4 = Comment.where(answer_id: '@qalist.id', answer_td_id_4: '@qalist.line4').order(created_at: :desc) if logged_in?
+    @answered_comments_5 = Comment.where(answer_id: '@qalist.id', answer_td_id_5: '@qalist.line5').order(created_at: :desc) if logged_in?
+    @answered_comments_6 = Comment.where(answer_id: '@qalist.id', answer_td_id_6: '@qalist.line6').order(created_at: :desc) if logged_in?
+    @answered_comments_7 = Comment.where(answer_id: '@qalist.id', answer_td_id_7: '@qalist.line7').order(created_at: :desc) if logged_in?
+    @answered_comments_8 = Comment.where(answer_id: '@qalist.id', answer_td_id_8: '@qalist.line8').order(created_at: :desc) if logged_in?
+    @answered_comments_9 = Comment.where(answer_id: '@qalist.id', answer_td_id_9: '@qalist.line9').order(created_at: :desc) if logged_in?
   end
   
   def destroy
